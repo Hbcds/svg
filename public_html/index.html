@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Projeto com SVG</title>
+        <style>
+            body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.loading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 7px;
+    animation: blink .9s ease-in-out infinite;
+}
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+    .triangle {
+        stroke-dasharray: 17;
+        animation: dash 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+    }
+    @keyframes dash {
+        to {
+            stroke-dashoffset: 136;
+        }
+    }
+        </style>
+    </head>
+    <body>
+        <svg width="200" height="200" viewBox="0 0 40 60">
+            <polygon class="triangle" fill="none" stroke="#379BA6" stroke-width="1" points="16,1 32,32 1,32" />     
+            <text class="loading" x="0" y="45" fill="#379BA6">Loading...</text>
+        </svg>
+    </body>
+</html>
